@@ -6,19 +6,25 @@ import { PageNotFoundComponent } from './paginas/PageNotFound/PageNotFound.compo
 import { PagVehiculosComponent } from './paginas/PagVehiculos/PagVehiculos.component';
 import { PagVehiculoRegistroComponent } from './paginas/PagVehiculoRegistro/PagVehiculoRegistro.component';
 import { ClientesComponent } from './paginas/Clientes/Clientes.component';
+import { EditarVehiculoComponent } from './paginas/EditarVehiculo/EditarVehiculo.component';
 
 const routes: Routes = [
   {
     path: "home",
     component: HomeComponent
   },
+  
   {
-    path: "vehiculo/nuevo", // Cambiado el nombre de la ruta
+    path: "vehiculo/nuevo",
     component: PagVehiculoRegistroComponent
   },
   {
     path: "vehiculo/:codigo",
     component: PagVehiculosComponent
+  },
+  {
+    path: "vehiculo/:codigo/editar", 
+    component: EditarVehiculoComponent
   },
   {
     path: "vehiculos",

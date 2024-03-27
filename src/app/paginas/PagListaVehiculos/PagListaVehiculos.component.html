@@ -59,8 +59,8 @@
                     (accionClick)="recepcion($event)"></app-calificacion>
                 </td>
                 <td>
-                  <button class="btn btn-primary">Editar</button>
-                  <button class="btn btn-danger">Eliminar</button>
+                  <a [routerLink]="[ '/vehiculo/'+ item.codigo+ '/editar']" class="btn btn-primary">Editar</a>
+                  <a class="btn btn-danger">Eliminar</a>
                 </td>
               </tr>
             </tbody>

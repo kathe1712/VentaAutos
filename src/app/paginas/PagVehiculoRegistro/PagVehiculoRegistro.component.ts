@@ -24,37 +24,14 @@ export class PagVehiculoRegistroComponent implements OnInit {
       "marca": ['', [Validators.required]],
       "modelo": ['', [Validators.required]],
       "anio":['', [Validators.required]],
-      "color": ['', [Validators.required]],
       "kilometraje": ['', [Validators.required]],
       "precio": [],
       "calificacion": ['', [Validators.required]]
     });
-    // this.formulario.controls['codigo'].disable();
   }
 
   ngOnInit() {
-    // this.activatedroute.params.subscribe(params => {
-    //   this.vehiculoServicio.getVehiculo(params['codigo']).subscribe(data => {
-    //     if (data.codigo == '1') {
-    //       this.vehiculo = data.data;
-    //       this.formulario.controls['codigo'].setValue(this.vehiculo?.codigo);
-    //       this.formulario.controls['marca'].setValue(this.vehiculo?.marca);
-    //       this.formulario.controls['modelo'].setValue(this.vehiculo?.modelo);
-    //       this.formulario.controls['color'].setValue(this.vehiculo?.color);
-    //       this.formulario.controls['anio'].setValue(this.vehiculo?.anio);
-    //       this.formulario.controls['calificacion'].setValue(this.vehiculo?.calificacion);
-    //       this.formulario.controls['precio'].setValue(this.vehiculo?.precio);
-    //       this.formulario.controls['kilometraje'].setValue(this.vehiculo?.kilometraje);
-    //     }
-    //     else {
-    //       Swal.fire({
-    //         title: "Mensaje de Alerta",
-    //         text: "No se pudo cargar la información",
-    //         icon: "error"
-    //       })
-    //     }
-    //   })
-    // })
+
   }
   guardar() {
     if (this.formulario.valid){

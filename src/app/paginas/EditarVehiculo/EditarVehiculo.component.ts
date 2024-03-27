@@ -25,7 +25,6 @@ export class EditarVehiculoComponent implements OnInit {
       "marca": ['', [Validators.required]],
       "modelo": ['', [Validators.required]],
       "anio":['', [Validators.required]],
-      "color": ['', [Validators.required]],
       "kilometraje": ['', [Validators.required]],
       "precio": [],
       "calificacion": ['', [Validators.required]]
@@ -41,7 +40,6 @@ export class EditarVehiculoComponent implements OnInit {
           this.formulario.controls['codigo'].setValue(this.vehiculo?.codigo);
           this.formulario.controls['marca'].setValue(this.vehiculo?.marca);
           this.formulario.controls['modelo'].setValue(this.vehiculo?.modelo);
-          this.formulario.controls['color'].setValue(this.vehiculo?.color);
           this.formulario.controls['anio'].setValue(this.vehiculo?.anio);
           this.formulario.controls['calificacion'].setValue(this.vehiculo?.calificacion);
           this.formulario.controls['precio'].setValue(this.vehiculo?.precio);
@@ -69,7 +67,7 @@ export class EditarVehiculoComponent implements OnInit {
             }).then (res => {
               this.formulario.reset();
             });
-          }
+          } 
           else{
             Swal.fire({
               title: "Mensaje",
