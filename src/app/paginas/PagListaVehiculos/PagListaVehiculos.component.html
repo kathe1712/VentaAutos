@@ -1,0 +1,72 @@
+<div class="card">
+  <div class="card-header">
+    <strong>Lista de Vehículos</strong>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Filtro: </label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Marca" [(ngModel)]="filtro">
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4>
+            <strong>Filtrado por: </strong>
+            {{filtro}}
+          </h4>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col-2">
+          <a [routerLink]="['/vehiculo/nuevo']" class="btn btn-warning">Nuevo</a>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>
+                  <button class="btn btn-xs" [ngClass]="{'btn-primary': mostrarImagen, 'btn-success':!mostrarImagen}"
+                    (click)="mostrar()">
+                    {{mostrarImagen ? 'Ocultar' :'Mostrar'}} Imagen
+                  </button>
+                </th>
+                <th>
+                  Código
+                <th>Marca
+                </th>
+                <th>Modelo</th>
+                <th>Año</th>
+                <th>Kilometraje</th>
+                <th>Precio</th>
+                <th>Calificación</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of listaVehiculos">
+                <td><img [src]="item.foto" style="width: 80px;" *ngIf="mostrarImagen"></td>
+                <td><a [routerLink]="[ '/vehiculo/'+ item.codigo]"> {{item.codigo}}</a></td>
+                <td>{{item.marca}}</td>
+                <td>{{item.modelo | lowercase | aEspacio:'-'}}</td>
+                <td [innerText]="item.anio"></td>
+                <td>{{item.kilometraje}}</td>
+                <td>{{item.precio | currency}}</td>
+                <td>
+                  <app-calificacion [calificacion]="item.calificacion"
+                    (accionClick)="recepcion($event)"></app-calificacion>
+                </td>
+                <td>
+                  <button class="btn btn-primary">Editar</button>
+                  <button class="btn btn-danger">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

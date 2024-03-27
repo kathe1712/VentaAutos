@@ -1,0 +1,57 @@
+<div class="card">
+  <div class="card-header">
+    <strong>Vehículo {{vehiculo?.marca}} {{vehiculo?.modelo}}</strong>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-6">
+
+        <div class="mb-3 row">
+          <label for="staticCodigo" class="col-sm-4 col-form-label">Código: </label>
+          <div class="col-sm-8">
+            {{vehiculo?.codigo}}
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="staticCodigo" class="col-sm-4 col-form-label">Marca: </label>
+          <div class="col-sm-8">
+            {{vehiculo?.marca}}
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="staticCodigo" class="col-sm-4 col-form-label">Modelo: </label>
+          <div class="col-sm-8">
+            {{vehiculo?.modelo}}
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="staticCodigo" class="col-sm-4 col-form-label">Año: </label>
+          <div class="col-sm-8">
+            {{vehiculo?.anio}}
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="staticCodigo" class="col-sm-4 col-form-label">Kilometraje: </label>
+          <div class="col-sm-8">
+            {{vehiculo?.kilometraje}}
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="staticCodigo" class="col-sm-4 col-form-label">Calificación: </label>
+          <div class="col-sm-8">
+            <app-calificacion [calificacion]="vehiculo?.calificacion" (accionClick)="imprimir($event)"></app-calificacion>
+          </div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+      <div class="col-5">
+        <img src="{{vehiculo?.foto}}" class="img-thumbnail">
+      </div>
+    </div>
+  </div>
+</div>
