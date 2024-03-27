@@ -60,7 +60,7 @@
                 </td>
                 <td>
                   <a [routerLink]="[ '/vehiculo/'+ item.codigo+ '/editar']" class="btn btn-primary">Editar</a>
-                  <a class="btn btn-danger">Eliminar</a>
+                  <a (click)="eliminar(item.codigo)" class="btn btn-danger">Eliminar</a>
                 </td>
               </tr>
             </tbody>
