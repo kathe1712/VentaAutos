@@ -57,21 +57,19 @@ export class EditarVehiculoComponent implements OnInit {
   }
   guardar() {
     if (this.formulario.valid){
-      this.vehiculoServicio.insertVehiculo({...this.formulario.value}).subscribe(
-        respuesta => {
-          if (respuesta.codigo == '1'){
+      this.vehiculoServicio.actualizarVehiculo({...this.formulario.value}, this.formulario.controls['codigo'].value).subscribe(
+        data => {
+          if (data.codigo == '1'){
             Swal.fire({
               title: "Mensaje",
-              text: "¡Vehículo registrado con éxito!",
+              text: "¡Vehículo actualizado con éxito!",
               icon: "success"
-            }).then (res => {
-              this.formulario.reset();
-            });
+            })
           } 
           else{
             Swal.fire({
               title: "Mensaje",
-              text: "No se pudo registrar el vehículo: "+respuesta.mensaje,
+              text: "Faltan llenar campos",
               icon: "error"
             })
           }
